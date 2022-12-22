@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+
+  pgdb:
+    image: postgres:14.1-alpine
+    restart: on-failure
+    environment:
+      POSTGRES_USER: hamdocker
+      POSTGRES_PASSWORD: h@md0ck3r
+    volumes:
+      - "db:/var/lib/postgresql/data_hamdocker"
+    ports:
+      - "3232:5432"
+    expose:
+      - "3232"
+
+volumes:
+  db:
+    driver: local
