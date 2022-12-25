@@ -1,4 +1,5 @@
 from django.db import models
+from simple_history.models import HistoricalRecords
 
 
 class App(models.Model):
@@ -7,6 +8,7 @@ class App(models.Model):
     image = models.CharField(max_length=128)
     command = models.CharField(max_length=128, blank=True, null=True)
     envs = models.JSONField(blank=True, null=True)
+    history = HistoricalRecords()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
