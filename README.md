@@ -3,7 +3,7 @@
 1. go to database dir
 2. use `docker-compose up` to set up database 
 3. go to root dir
-4. create virtualenv using `python -m virtualenv venv`
+4. create virtualenv using `python -m venv venv`
 5. activate it using `source venv/bin/activate`
 6. install dependencies using `pip install -r requirement.txt`
 7. go to server dir
