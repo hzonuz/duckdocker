@@ -1,6 +1,11 @@
 from django.urls import path
 
-from apps.views import AppViewSet, RunContainerView, StopContainerView
+from apps.views import (
+    AppViewSet,
+    RunContainerView,
+    StopContainerView,
+    ContainerDetailListView,
+)
 
 app_list = AppViewSet.as_view(
     {
@@ -27,5 +32,10 @@ urlpatterns = [
         "<app_id>/stop-container/<container_id>/v0/",
         StopContainerView.as_view(),
         name="stop-container",
+    ),
+    path(
+        "<app_id>/containers/v0/",
+        ContainerDetailListView.as_view(),
+        name="container-detail-list",
     ),
 ]
